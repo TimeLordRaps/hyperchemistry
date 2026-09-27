@@ -1,9 +1,10 @@
 # A conditional composition law for operations
 
 Status: **[FRAME] mathematical model and executable finite witness**, not a
-hyperphysics derivation. `[FORM]` below denotes a claim proved within the
-stated finite-set model only. `[OPEN]` denotes an unsupplied field interface or
-proof obligation. `[HYPER]` would require an explicit cross-level map; none is
+native derivation. `[FRAME]` includes conditional mathematical consequences
+proved within the stated finite-set model; it is not promoted to `[FORM]` of
+the native ground. `[OPEN]` denotes an unsupplied field interface or proof
+obligation. `[HYPER]` would require an explicit cross-level map; none is
 claimed here. These are epistemic classifications, not certification.
 
 ## Ancestry and scope
@@ -59,16 +60,16 @@ enumerates candidates up to an explicit bound; exceeding it raises
 `EnumerationLimit`, not a false `UNSAT` (unsatisfiable) or a scientific
 `UNKNOWN` verdict.
 
-**[FORM, within this model]** Composition is invariant under permuting the
-order in which component predicates and wire equalities are conjoined: logical
-conjunction is associative and commutative. This does **not** permit hiding an
+**[FRAME, proved within this model]** Composition is invariant under permuting
+the order in which component predicates and wire equalities are conjoined:
+logical conjunction is associative and commutative. This does **not** permit hiding an
 interface port before a later wiring needs it. Existential projection generally
 cannot be moved across a constraint mentioning the hidden variable. Thus a
 valid decomposition carries every future connection as an exposed interface.
 
-**[FORM, within this model]** Domain mismatch is rejected, an empty composite
-has zero admissible joint assignments, and a satisfiable composite may have more
-joint assignments than distinct exposed rows. These are consequences of the
+**[FRAME, proved within this model]** Domain mismatch is rejected, an empty
+composite has zero admissible joint assignments, and a satisfiable composite
+may have more joint assignments than distinct exposed rows. These are consequences of the
 set construction, not claims about nature.
 
 ## Witness and counterexamples
