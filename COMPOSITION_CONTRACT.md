@@ -20,8 +20,12 @@ hyperphysical operation. No equation is silently cast to an operation here.
 
 The phrase *operation of operations* is retained as the field's subject. The
 finite relations below supply one candidate mechanism, not its definition by
-fiat. Hypermechanics' transition relations and hyperdynamics' trajectories are
-not imported. Feedback here is a simultaneous constraint, not time evolution.
+fiat. This public module does not import Hyperstructure, Hypermechanics, or
+Hyperdynamics. Feedback here is a simultaneous constraint, not time evolution.
+In the separate work-in-progress field architecture, structural composition,
+rule realization, and path/coupling checks belong to those respective fields;
+their local finite handoff is not a native derivation or a published dependency
+of this repository.
 
 ## Finite model
 
@@ -123,13 +127,23 @@ case would still leave GC-5 and the field-level operation map open.
 
 ## Binding obligations and promotion gates
 
-**[OPEN] Hyperphysics source.** GC-5 must define the operation carrier, its
-static features, admissibility and identity/equivalence. Identify an exact
-source version and prove what, if anything, corresponds to a port relation.
-The current electrical-law strings cannot fill that slot by naming them so.
+**[OPEN] Typed source-to-model handoff.** Identify an exact source version and
+bind component identity and kinds (Hyperstructure), guarded realized operations
+(Hypermechanics), and admissible paths/coupling (Hyperdynamics, when claimed)
+to a typed relation and interface in this finite model. Check that no dynamic
+step or chemistry row is invented by translation and that invalidating source
+changes degrade the claim. The current electrical-law strings cannot fill this
+slot by naming them operations. A local finite witness exercises one such
+chain, but native adequacy and complete field coverage remain open.
 
-**[OPEN] Preservation.** If a map from hyperphysics operations to relations is
-proposed, state which compositions and distinctions it preserves and which it
+**[OPEN] Hyperphysics ground.** GC-5's separate question is whether
+hyperphysics has its own ground from which circuit theory follows. The generic
+three-field handoff cannot supply a physical constitutive law, units, empirical
+scope, or GC-5 by itself. Whether GC-5 needs re-scoping after the field split
+is an author-level question; this document does not silently change it.
+
+**[OPEN] Preservation.** For each proposed source-operation-to-relation map,
+state which compositions and distinctions it preserves and which it
 forgets. A finite truncation of an infinite domain needs an explicit envelope;
 outside it the field claim is `UNKNOWN` or `OUT_OF_BOUNDS` as its contract
 requires, never a theorem extrapolated from finite enumeration.
