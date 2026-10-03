@@ -24,3 +24,5 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Run demonstration
         run: python -m examples.negation_networks
+      - name: Run order-of-projection demonstration
+        run: python -m examples.projection_order

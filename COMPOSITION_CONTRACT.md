@@ -126,6 +126,42 @@ permits adding unlike dimensions, or drops a constituent failure mode, it does
 not preserve even the available hyperphysics citation surface. Passing that
 case would still leave GC-5 and the field-level operation map open.
 
+## Order of projections: a second witness
+
+**[FRAME, proved within this model by exhaustive enumeration]** `compose` uses only
+existential projection, and existential projections commute with one another. With
+the other quantifier added (`finite_projection_order.py`), the same two projections
+applied to the same relation in a different order can differ. Over all sixteen
+relations on `B x B`, `B = {0, 1}`:
+
+- `exists y, forall x` implies `forall x, exists y` for every relation;
+- the converse fails for **exactly two** relations: the identity relation and the
+  negation relation `N` used in the witness above;
+- `exists, exists` and `forall, forall` commute for every relation.
+
+So the two relations this contract already uses are exactly those on `B x B` for
+which the order of two projections is observable. The effect is not an artifact of
+two-element domains: on `{a, b, c}` the relation "different values" gives `forall x,
+exists y` true and `exists y, forall x` false. A constant column, the empty relation
+and the full relation agree in both orders, as negative controls.
+
+**Consequence within the model.** "Same components, wired differently" includes the
+order in which ports are projected. Once projections do not all share one quantifier,
+neither the component inventory nor the wiring graph determines the composite.
+
+**[OPEN] Relation to limits.** A limit statement is a quantifier prefix over `epsilon`
+and `N`, and an exchange of limits is an exchange of quantifiers, so this finite model
+shows the *shape* of the failure that makes an exchange of limits fail. It does **not**
+model limits: they need infinite domains, which lie outside this model's envelope, and
+outside the envelope the claim is `UNKNOWN` or `OUT_OF_BOUNDS`, never a theorem
+extrapolated from finite enumeration. The numerical counterpart is the
+[`hyperphysics.limits`](https://github.com/TimeLordRaps/hyperphysics/blob/d34561dc694d9344dde5044450d2d5b860fa391c/src/hyperphysics/limits.py)
+module, at a commit on an unmerged branch: for the Curie-Weiss ferromagnet below its
+critical temperature, taking the thermodynamic limit first and the zero-field limit
+second gives `0.9577`; the other order gives `0`. That module's estimator certifies a
+limit only under an assumption it states, and its loop-quantum-gravity instance is not
+implemented.
+
 ## Binding obligations and promotion gates
 
 **[OPEN] Typed source-to-model handoff.** Identify an exact source version and
@@ -165,3 +201,10 @@ model is not a VSTD grounded certificate or evidence that graduation criterion
 4 (GC-4), transport soundness, is resolved. Any later verification receipt needs the exact claim,
 artifact digest, source coordinate, translation, mechanism, assumptions,
 exclusions, invalidators and a supported `PASS`/`FAIL`/`UNKNOWN` judgment.
+
+**[OPEN] Limit-to-prefix map.** State, for a finite truncation with an explicit
+envelope, a typed map from a word of limits (`hyperphysics.limits.Word`) to a
+quantifier prefix over a finite relation, and check which distinctions it preserves.
+Until then the relation between order of limits and order of projections is an
+analogy of shape, not a derivation, and no hyperphysics operation is claimed to be a
+projection.

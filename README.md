@@ -29,6 +29,7 @@ solutions and an unfinished enumeration. Run the demonstration and checks with:
 
 ```text
 python -m examples.negation_networks
+python -m examples.projection_order
 python -m unittest discover -s tests -v
 ```
 
@@ -41,3 +42,9 @@ and rows, but these field contracts are not yet published here or natively
 derived. Hyperphysics must separately add physical quantities, laws, units,
 balances, and its own GC-5 ground. Hyperbiology needs its own observation and
 whole criterion before consuming any composite.
+
+[`finite_projection_order.py`](finite_projection_order.py) adds the other quantifier so
+the order of two projections can be compared exactly: over all relations on `B x B`, the
+two where the order is observable are the identity and the negation this contract
+already uses (see "Order of projections" in the contract). It models the shape of an
+exchange of limits, not limits themselves.
